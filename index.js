@@ -1,13 +1,18 @@
 //initializing variables
+
+//html connections
 const tab = document.getElementById('table');
 const text1 = document.getElementById('text1');
 const text2 = document.getElementById('text2');
+//player vars
 let currPlayer = 'red';
 let playerCheck = 0;
+//count variables for winner function
 let innaRow = 0;
 let innaCol = 0;
+let innaSlant = 0;
+//boolean for winner func
 let winner = false;
-let cellCoords = [];
 
 
 
@@ -15,6 +20,7 @@ let cellCoords = [];
 
 
 
+//onClick function for dropping checkers into the board
 tab.addEventListener('click', function (e) {
     let cell = e.target.closest('td');
     let col = cell.cellIndex;
@@ -29,12 +35,8 @@ tab.addEventListener('click', function (e) {
             for (let i = 0; i < 6; i++) {
                 if (tab.rows[i].cells[col].innerHTML != '<img src="blank.png" alt="checker">') {
                     tab.rows[i - 1].cells[col].innerHTML = '<img src="red.png" alt="checker">';
-
-                    //passes coordinates into an array that will be use for winner function
-                    cellCoords.push(col);
-                    cellCoords.push((i - 1));
-                    // alert(cellCoords);
                     break;
+
                 }
 
             }
@@ -75,26 +77,143 @@ tab.addEventListener('click', function (e) {
         text2.innerHTML = "It's still " + currPlayer + " player's" + " turn.";
 
     }
-
+    redWinner();
+    blueWinner();
 });
 
 
-// function winnerWinnerChickenDinner(arr) {
-//     //check each row for winner
-//     for (let k = 0; k < 7; k++) {
-//         if (true) {
-//             innaRow++;
-//             if (innaRow == 4) {
-//                 winner = true;
-//             }
-//         }
-//         else {
+function redWinner() {
+    //checks for a winning row after a red token is dropped
+    for (let j = 0; j < 6; j++) {
+        for (let k = 0; k < 7; k++) {
+            if (tab.rows[j].cells[k].innerHTML == '<img src="red.png" alt="checker">') {
+                innaRow++;
+                if (innaRow == 4) {
+                    alert("winner!!!!");
+                }
+            }
+            else {
+                innaRow = 0;
+            }
+        }
 
-//         }
-//     }
+    }
+    //checks for a winning column after a token is dropped
+    for (let l = 0; l < 7; l++) {
+        for (let m = 0; m < 6; m++) {
+            if (tab.rows[m].cells[l].innerHTML == '<img src="red.png" alt="checker">') {
+                innaCol++;
+                if (innaCol == 4) {
+                    alert("winner!!!!");
+                }
+            }
+            else {
+                innaCol = 0;
+            }
+        }
+    }
+    //most annoying part.. check for diagonal winner
+    //only 6 different diagonal "rows" with the chance to fit a match of 4 checkers 
+    //split into two different loops of three iterations 
+    //one for first three diagonal "rows"
+    //one for last three diagonal "rows"
 
-// }
+    for (let count = 0; count < 4; count++) {
+        //this set always sets the start column(y) at 0
+        let o = 0;
+        //reset slant counter
+        innaSlant = 0;
+        //srart of loop for first diagonal "row"
+        for (n = count; n < 6; n++) {
+            if (tab.rows[n].cells[o].innerHTML == '<img src="red.png" alt="checker">') {
+                innaSlant++;
+                if (innaSlant == 4) {
+                    alert("winner!!!!");
+                }
+            }
+            else {
+                innaSlant = 0;
 
+            }
+            //move one column over
+            o++;
+        }
+    }
+
+////////////////////////////////////////////////////////
+
+for (let count = 1; count < 4; count++) {
+    //this set always sets the start column(y) at 0
+    let o = 0;
+    //reset slant counter
+    innaSlant = 0;
+    //srart of loop for first diagonal "row"
+    for (n = count; n < 6; n++) {
+        if (tab.rows[o].cells[n].innerHTML == '<img src="red.png" alt="checker">') {
+            innaSlant++;
+            if (innaSlant == 4) {
+                alert("winner!!!!");
+            }
+        }
+        else {
+            innaSlant = 0;
+
+        }
+        //move one row down
+        o++;
+    }
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function blueWinner() {
+    //checks for a winning row after a red token is dropped
+    for (let j = 0; j < 6; j++) {
+        for (let k = 0; k < 7; k++) {
+            if (tab.rows[j].cells[k].innerHTML == '<img src="blue.png" alt="checker">') {
+                innaRow++;
+                if (innaRow == 4) {
+                    alert("winner!!!!");
+                }
+            }
+            else {
+                innaRow = 0;
+            }
+        }
+
+    }
+    //checks for a winning column after a token is dropped
+    for (let l = 0; l < 7; l++) {
+        for (let m = 0; m < 6; m++) {
+            if (tab.rows[m].cells[l].innerHTML == '<img src="blue.png" alt="checker">') {
+                innaCol++;
+                if (innaCol == 4) {
+                    alert("winner!!!!");
+                }
+            }
+            else {
+                innaCol = 0;
+            }
+        }
+
+    }
+
+
+}
 
 
 
