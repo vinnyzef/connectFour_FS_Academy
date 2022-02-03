@@ -112,44 +112,65 @@ function redWinner() {
     //         }
     //     }
     // }
-    //most annoying part.. check for diagonal winner
-    //only 6 different diagonal "rows" with the chance to fit a match of 4 checkers 
-    //split into two different loops of three iterations 
-    //one for first three diagonal "rows"
-    //one for last three diagonal "rows"
 
-    for (let count = 0; count < 4; count++) {
-        //this set always sets the start column(y) at 0
-        let o = 0;
-        //reset slant counter
-        innaSlant = 0;
-        //srart of loop for first diagonal "row"
-        for (n = count; n < 6; n++) {
-            if (tab.rows[n].cells[o].innerHTML == '<img src="red.png" alt="checker">') {
-                innaSlant++;
-                if (innaSlant == 4) {
-                    alert("winner!!!!");
-                }
-            }
-            else {
-                innaSlant = 0;
+    //2 different for loops for going diagonaly down to the right
 
-            }
-            //move one column over
-            o++;
-        }
-    }
+//     for (let count = 0; count < 4; count++) {
+//         //this set always sets the start column(y) at 0
+//         let o = 0;
+//         //reset slant counter
+//         innaSlant = 0;
+//         //srart of loop for first diagonal "row"
+//         for (n = count; n < 6; n++) {
+//             if (tab.rows[n].cells[o].innerHTML == '<img src="red.png" alt="checker">') {
+//                 innaSlant++;
+//                 if (innaSlant == 4) {
+//                     alert("winner!!!!");
+//                 }
+//             }
+//             else {
+//                 innaSlant = 0;
 
-////////////////////////////////////////////////////////
+//             }
+//             //move one column over
+//             o++;
+//         }
+//     }
 
-for (let count = 1; count < 4; count++) {
+// ////////////////////////////////////////////////////////
+
+// for (let count = 1; count < 4; count++) {
+//     //this set always sets the start column(y) at 0
+//     let o = 0;
+//     //reset slant counter
+//     innaSlant = 0;
+//     //srart of loop for first diagonal "row"
+//     for (n = count; n < 7; n++) {
+//         if (tab.rows[o].cells[n].innerHTML == '<img src="red.png" alt="checker">') {
+//             innaSlant++;
+//             if (innaSlant == 4) {
+//                 alert("winner!!!!");
+//             }
+//         }
+//         else {
+//             innaSlant = 0;
+
+//         }
+//         //move one row down
+//         o++;
+//     }
+// }
+
+
+//2 for loops going up and to the right for diagonal matches
+for (let count = 3; count < 6; count++) {
     //this set always sets the start column(y) at 0
     let o = 0;
     //reset slant counter
     innaSlant = 0;
     //srart of loop for first diagonal "row"
-    for (n = count; n < 7; n++) {
-        if (tab.rows[o].cells[n].innerHTML == '<img src="red.png" alt="checker">') {
+    for (n = count; n >= 0; n--) {
+        if (tab.rows[n].cells[o].innerHTML == '<img src="red.png" alt="checker">') {
             innaSlant++;
             if (innaSlant == 4) {
                 alert("winner!!!!");
@@ -159,7 +180,7 @@ for (let count = 1; count < 4; count++) {
             innaSlant = 0;
 
         }
-        //move one row down
+        //move one column over
         o++;
     }
 }
