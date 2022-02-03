@@ -83,35 +83,35 @@ tab.addEventListener('click', function (e) {
 
 
 function redWinner() {
-    //checks for a winning row after a red token is dropped
-    for (let j = 0; j < 6; j++) {
-        for (let k = 0; k < 7; k++) {
-            if (tab.rows[j].cells[k].innerHTML == '<img src="red.png" alt="checker">') {
-                innaRow++;
-                if (innaRow == 4) {
-                    alert("winner!!!!");
-                }
-            }
-            else {
-                innaRow = 0;
-            }
-        }
+    // //checks for a winning row after a red token is dropped
+    // for (let j = 0; j < 6; j++) {
+    //     for (let k = 0; k < 7; k++) {
+    //         if (tab.rows[j].cells[k].innerHTML == '<img src="red.png" alt="checker">') {
+    //             innaRow++;
+    //             if (innaRow == 4) {
+    //                 alert("winner!!!!");
+    //             }
+    //         }
+    //         else {
+    //             innaRow = 0;
+    //         }
+    //     }
 
-    }
-    //checks for a winning column after a token is dropped
-    for (let l = 0; l < 7; l++) {
-        for (let m = 0; m < 6; m++) {
-            if (tab.rows[m].cells[l].innerHTML == '<img src="red.png" alt="checker">') {
-                innaCol++;
-                if (innaCol == 4) {
-                    alert("winner!!!!");
-                }
-            }
-            else {
-                innaCol = 0;
-            }
-        }
-    }
+    // }
+    // //checks for a winning column after a token is dropped
+    // for (let l = 0; l < 7; l++) {
+    //     for (let m = 0; m < 6; m++) {
+    //         if (tab.rows[m].cells[l].innerHTML == '<img src="red.png" alt="checker">') {
+    //             innaCol++;
+    //             if (innaCol == 4) {
+    //                 alert("winner!!!!");
+    //             }
+    //         }
+    //         else {
+    //             innaCol = 0;
+    //         }
+    //     }
+    // }
     //most annoying part.. check for diagonal winner
     //only 6 different diagonal "rows" with the chance to fit a match of 4 checkers 
     //split into two different loops of three iterations 
@@ -148,7 +148,7 @@ for (let count = 1; count < 4; count++) {
     //reset slant counter
     innaSlant = 0;
     //srart of loop for first diagonal "row"
-    for (n = count; n < 6; n++) {
+    for (n = count; n < 7; n++) {
         if (tab.rows[o].cells[n].innerHTML == '<img src="red.png" alt="checker">') {
             innaSlant++;
             if (innaSlant == 4) {
@@ -180,40 +180,40 @@ for (let count = 1; count < 4; count++) {
 
 
 
-function blueWinner() {
-    //checks for a winning row after a red token is dropped
-    for (let j = 0; j < 6; j++) {
-        for (let k = 0; k < 7; k++) {
-            if (tab.rows[j].cells[k].innerHTML == '<img src="blue.png" alt="checker">') {
-                innaRow++;
-                if (innaRow == 4) {
-                    alert("winner!!!!");
-                }
-            }
-            else {
-                innaRow = 0;
-            }
-        }
+// function blueWinner() {
+//     //checks for a winning row after a red token is dropped
+//     for (let j = 0; j < 6; j++) {
+//         for (let k = 0; k < 7; k++) {
+//             if (tab.rows[j].cells[k].innerHTML == '<img src="blue.png" alt="checker">') {
+//                 innaRow++;
+//                 if (innaRow == 4) {
+//                     alert("winner!!!!");
+//                 }
+//             }
+//             else {
+//                 innaRow = 0;
+//             }
+//         }
 
-    }
-    //checks for a winning column after a token is dropped
-    for (let l = 0; l < 7; l++) {
-        for (let m = 0; m < 6; m++) {
-            if (tab.rows[m].cells[l].innerHTML == '<img src="blue.png" alt="checker">') {
-                innaCol++;
-                if (innaCol == 4) {
-                    alert("winner!!!!");
-                }
-            }
-            else {
-                innaCol = 0;
-            }
-        }
+//     }
+//     //checks for a winning column after a token is dropped
+//     for (let l = 0; l < 7; l++) {
+//         for (let m = 0; m < 6; m++) {
+//             if (tab.rows[m].cells[l].innerHTML == '<img src="blue.png" alt="checker">') {
+//                 innaCol++;
+//                 if (innaCol == 4) {
+//                     alert("winner!!!!");
+//                 }
+//             }
+//             else {
+//                 innaCol = 0;
+//             }
+//         }
 
-    }
+//     }
 
 
-}
+// }
 
 
 
