@@ -49,3 +49,11 @@ td{
 width: 50px;
 height: 50px;
 }
+#reset{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50pxgti;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
