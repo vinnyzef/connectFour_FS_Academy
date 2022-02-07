@@ -67,6 +67,7 @@ height: 50px;
     text-align: center;
 }
 #p1{
+   
     font-family: 'Bebas Neue', cursive;
     margin-top: 0px;
     margin-left: auto;
@@ -77,8 +78,9 @@ text-align: center;
 
 }
 #p2{
+ 
      font-family: 'Bebas Neue', cursive;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -86,10 +88,14 @@ text-align: center;
     text-align: center;
 }
 #start{
-    margin-top: 10px;
+    border-radius: 90%;
+    color: blue;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 15px;
     display: flex;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    border: 2px solid red;
 }
