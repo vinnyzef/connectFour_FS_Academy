@@ -1,4 +1,3 @@
-# connectFour
 # Connect Four Web App
 * This is a simple web application that allows users to play the classic game of Connect Four. The game is built using HTML and CSS, and runs entirely in the browser, without requiring any server-side code or plugins.
 
